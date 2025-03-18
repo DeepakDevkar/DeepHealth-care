@@ -9,7 +9,6 @@ require 'C:/xampp/htdocs/css/PHPMailer-master/src/SMTP.php';
 // Check if the form is submitted and the approve button is clicked
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['approve'])) {
     // Get the appointment ID, email, and phone number from the form
-    
     $email = $_POST['email'];
 
     $mail = new PHPMailer(true);
@@ -19,13 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['approve'])) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'harshpatil6054@gmail.com'; // Your Gmail email address
-        $mail->Password   = 'edkfxqjwspokoxlg'; // Your Gmail password
-        $mail->SMTPSecure = 'tls';
+        
+        // Your Gmail email and App Password here
+        $mail->Username   = 'deepakdevkar60@gmail.com'; // Your Gmail email address
+        $mail->Password   = 'knmh xuiq wtne wsuz'; // Use App Password if 2FA is enabled
+        
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Recipients
-        $mail->setFrom('harshpatil6054@gmail.com', 'Doctor');
+        $mail->setFrom('deepakdevkar60@gmail.com', 'Doctor');
         $mail->addAddress($email); // Add recipient email
 
         // Content
@@ -39,9 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['approve'])) {
         echo "Error sending email: {$mail->ErrorInfo}";
     }
 
-    // You can add further logic here such as updating the database to mark the appointment as approved
+    // Further logic for marking appointment as approved
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reject'])) {
-     
     $email = $_POST['email'];
 
     $mail = new PHPMailer(true);
@@ -51,13 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['approve'])) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'harshpatil6054@gmail.com'; // Your Gmail email address
-        $mail->Password   = 'edkfxqjwspokoxlg'; // Your Gmail password
-        $mail->SMTPSecure = 'tls';
+        
+        // Your Gmail email and App Password here
+        $mail->Username   = 'deepakdevkar60@gmail.com'; // Your Gmail email address
+        $mail->Password   = 'knmh xuiq wtne wsuz'; // Use App Password if 2FA is enabled
+        
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Recipients
-        $mail->setFrom('harshpatil6054@gmail.com', 'Doctor');
+        $mail->setFrom('deepakdevkar60@gmail.com', 'Doctor');
         $mail->addAddress($email); // Add recipient email
 
         // Content
