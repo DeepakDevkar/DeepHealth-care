@@ -1,8 +1,7 @@
-<?php
-
-?>
+<?php?>
 <!DOCTYPE html>
 <html>
+
 
 <head>
     <link rel="stylesheet" href="style.css">
@@ -11,7 +10,7 @@
     <title>Health Care Services</title>
     <style>
 
-/* Basic styling for the body and heading */
+/* Basic styling for the body and heading  done testing */
         body {
             font-family: Arial, sans-serif;
             
@@ -169,6 +168,8 @@
             <div class="main">
                 <div class="dup1">
                    <img src="images/l5.jpg">
+
+
                 </div>
                 <div class="dup2">
                     <h1> 'speak to Experts' ,
